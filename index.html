@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Openwhisk by YOTOV-LIMITED</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Openwhisk</h1>
+      <h2 class="project-tagline">OpenWhisk is a cloud-first distributed event-based programming service.</h2>
+      <a href="https://github.com/YOTOV-LIMITED/openwhisk" class="btn">View on GitHub</a>
+      <a href="https://github.com/YOTOV-LIMITED/openwhisk/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/YOTOV-LIMITED/openwhisk/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="openwhisk" class="anchor" href="#openwhisk" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OpenWhisk</h1>
+
+<p><a href="https://travis-ci.org/openwhisk/openwhisk"><img src="https://travis-ci.org/openwhisk/openwhisk.svg?branch=master" alt="Build Status"></a>
+<a href="http://www.apache.org/licenses/LICENSE-2.0"><img src="https://img.shields.io/badge/license-Apache--2.0-blue.svg" alt="License"></a></p>
+
+<p>OpenWhisk is a cloud-first distributed event-based programming service. It provides a programming model to upload event handlers to a cloud service, and register the handlers to respond to various events. Learn more at <a href="https://developer.ibm.com/openwhisk">https://developer.ibm.com/openwhisk</a> or try it on <a href="https://ibm.biz/openwhisk">IBM Bluemix OpenWhisk</a>.</p>
+
+<ul>
+<li><a href="#quick-start">Quick Start</a></li>
+<li><a href="#custom-configurations">Other Configurations</a></li>
+<li><a href="#learn-concepts-and-commands">Learn concepts and commands</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#issues">Issues</a></li>
+</ul>
+
+<h3>
+<a id="quick-start" class="anchor" href="#quick-start" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quick Start</h3>
+
+<p>A <a href="http://vagrantup.com">Vagrant</a> machine is the easiest way to run OpenWhisk on Mac, Windows PC or GNU/Linux.
+Download and install <a href="https://www.vagrantup.com/downloads.html">Vagrant</a> for your operating system and architecture.</p>
+
+<p>Follow these step to run your first OpenWhisk Action:</p>
+
+<pre><code># Clone openwhisk
+git clone --depth=1 https://github.com/openwhisk/openwhisk.git
+
+# Change directory to tools/vagrant
+cd openwhisk/tools/vagrant
+
+# Run script to create vm and run hello action
+./hello
+</code></pre>
+
+<p>Wait for hello action output:</p>
+
+<pre><code>wsk action invoke /whisk.system/samples/echo -p message hello --blocking --result
+{
+    "message": "hello"
+}
+</code></pre>
+
+<p>For more information about OpenWhisk vagrant scenarios see the <a href="tools/vagrant/README.md">tools/vagrant/README.md</a></p>
+
+<h3>
+<a id="custom-configurations" class="anchor" href="#custom-configurations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custom Configurations</h3>
+
+<p>The quick start above uses an ephemeral data store that does not persist data when the vm is reloaded. The following instructions
+allow you to configure OpenWhisk to use a persistent data store via Cloudant or CouchDB.</p>
+
+<p>These steps were tested on Mac OS X El Capitan, Ubuntu 14.04.3 LTS and Windows using Vagrant.</p>
+
+<ul>
+<li><a href="tools/vagrant/README.md">Vagrant on Mac, Windows PC, or GNU/Linux</a></li>
+<li><a href="tools/ubuntu-setup/README.md">OpenWhisk on Ubuntu Server(s) natively</a></li>
+</ul>
+
+<h3>
+<a id="learn-concepts-and-commands" class="anchor" href="#learn-concepts-and-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Learn concepts and commands</h3>
+
+<p>Browse the <a href="docs/">documentation</a> to learn more. Here are some topics you may be
+interested in:</p>
+
+<ul>
+<li><a href="docs/about.md">System overview</a></li>
+<li><a href="docs/README.md">Getting Started</a></li>
+<li><a href="docs/actions.md">Create and invoke actions</a></li>
+<li><a href="docs/triggers_rules.md">Create triggers and rules</a></li>
+<li><a href="docs/packages.md">Use and create packages</a></li>
+<li><a href="docs/catalog.md">Browse and use the catalog</a></li>
+<li><a href="docs/mobile_sdk.md">Using the OpenWhisk mobile SDK</a></li>
+<li><a href="docs/reference.md">OpenWhisk system details</a></li>
+</ul>
+
+<h3>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h3>
+
+<p>Copyright 2015-2016 IBM Corporation</p>
+
+<p>Licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, Version 2.0 (the "License")</a>.</p>
+
+<p>Unless required by applicable law or agreed to in writing, software distributed under the license is distributed on an "as is" basis, without warranties or conditions of any kind, either express or implied. See the license for the specific language governing permissions and limitations under the license.</p>
+
+<h3>
+<a id="issues" class="anchor" href="#issues" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Issues</h3>
+
+<p>Report bugs, ask questions and request features <a href="../../issues">here on GitHub</a>.</p>
+
+<p>You can also join our slack channel and chat with developers.   To get access to our slack channel, please see the instructions <a href="https://github.com/openwhisk/openwhisk/wiki">here</a>.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/YOTOV-LIMITED/openwhisk">Openwhisk</a> is maintained by <a href="https://github.com/YOTOV-LIMITED">YOTOV-LIMITED</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
